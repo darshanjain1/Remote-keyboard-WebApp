@@ -1,0 +1,29 @@
+{
+  "name": "Remote-keyboard-WebApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/darshanjain1/Remote-keyboard-WebApp.git",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "make-migration": "knex migrate:make --knexfile=database/knexFile.js",
+    "migrate": "knex migrate:latest --knexfile=database/knexFile.js",
+    "rollback": "knex migrate:rollback --knexfile=knexFile.js",
+    "clear-db": "knex migrate:rollback --all --knexfile=knexFile.js",
+    "make-seed": "knex seed:make --knexfile=knexFile.js --cwd ./database",
+    "run-seed": "bash seed.sh"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "knex": "^3.1.0",
+    "mysql2": "^3.13.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
