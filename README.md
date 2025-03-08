@@ -6,11 +6,10 @@ Remote Keyboard WebApp is a browser-based application that allows multiple users
 
 ## UI
 
-![Keyboard UI](https://github.com/darshanjain1/Remote-keyboard-WebApp/blob/main/assets/keyboard-ui.png)
+![Keyboard UI](https://github.com/darshanjain1/Remote-keyboard-WebApp/blob/main/public/assets/keyboard-ui.png)
 
 ## Video
-
-![Demo Video](https://drive.google.com/file/d/1m5h3rfq8Pze9PZRotRuMj13qw7PCPD8F/view)
+[![Demo Video](https://img.icons8.com/fluency/48/000000/video.png)](https://drive.google.com/file/d/1m5h3rfq8Pze9PZRotRuMj13qw7PCPD8F/view)
 
 
 ## Features
