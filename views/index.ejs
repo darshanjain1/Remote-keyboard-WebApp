@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid</title>
+    <link rel="stylesheet" href="/styles/keyboard.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Grid Container -->
+        <div class="grid-container">
+            <% 
+                let totalValues = values.length;
+                let columns = 5;
+                let rows = Math.ceil(totalValues / columns);
+                let totalCells = rows * columns; // Ensure grid is fully filled
+
+                for (let i = 0; i < totalCells; i++) {
+                    let item = values[i]; 
+            %>
+                <% if (item) { %>
+                    <div class="grid-item colored" style="--dynamic-color: <%= item.user.color || 'white' %>;" 
+                        data-key="<%= item.key %>" 
+                        data-object='<%- JSON.stringify(item) %>'
+                        >
+                        <%= item.key %>
+                    </div>
+                <% } else { %>
+                    <div class="grid-item empty"></div> <!-- Empty cell -->
+                <% } %>
+            <% } %>
+        </div>
+
+        <!-- Control Section -->
+        <div class="control-container">
+            <button id="take-control-btn">Take Control</button>
+            <p id="status-message">
+                Status: <span id="control-status"><%= currentKeyboardUser.name ? currentKeyboardUser.name : 'No' %></span> user has control now.
+            </p>
+        </div>
+        <!-- User Color Mapping -->
+        <div class="user-color-mapping-container">
+            <p class="user-color-heading" style="display: <%=recentKeyboardUsers.length? 'block':'none'%>">Active Users:</p>
+            <div class="user-color-mapping">
+                <% recentKeyboardUsers.forEach(user => { %>
+                    <span class="user-badge" style="background-color: <%= user.color %>">
+                        <%= user.name %>
+                    </span>
+                <% }); %>
+            </div>
+        </div>
+        
+    </div>
+    <script type="module" src="/keyboard.js"></script>
+
+</body>
+
+</html>
