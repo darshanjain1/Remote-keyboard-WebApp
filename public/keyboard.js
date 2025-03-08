@@ -50,10 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       clickedCell.classList.contains("grid-item") &&
       userIdentifier === activeKeyboardUser?.identifier
     ) {
-      handleCellClick(
-        JSON.parse(clickedCell.getAttribute("data-object")),
-        userIdentifier
-      );
+      const cellData = JSON.parse(clickedCell.getAttribute("data-object"));
+      cellData && handleCellClick(cellData, userIdentifier);
     }
   });
 
